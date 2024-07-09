@@ -17,13 +17,13 @@ export const createLoan = (loan) => {
 
 export const borrow = (loanId, amount) => {
     return fetch(`${API_URL}/${loanId}/borrow?amount=${amount}`, {
-        method: 'POST'
+        method: 'PUT'
     }).then(response => response.json());
 };
 
 export const payback = (loanId, amount) => {
     return fetch(`${API_URL}/${loanId}/payback?amount=${amount}`, {
-        method: 'POST'
+        method: 'PUT'
     }).then(response => response.json());
 };
 

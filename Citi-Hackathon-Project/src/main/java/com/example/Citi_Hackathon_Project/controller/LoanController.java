@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,18 +39,34 @@ public class LoanController {
         return loanRepository.save(loan);
     }
 
-    @PostMapping("/{id}/borrow")
+    /*@PostMapping("/{id}/borrow")
+    public Loan borrowLoan(@PathVariable Long id, @RequestParam double amount) {
+        Loan loan = loanRepository.findById(id).orElseThrow(() -> new RuntimeException("Loan not found"));
+        loan.borrowLoan(amount);
+        return loanRepository.save(loan);
+    }*/
+
+    /*@PostMapping("/{id}/payback")
+    public Loan paybackLoan(@PathVariable Long id, @RequestParam double amount) {
+        Loan loan = loanRepository.findById(id).orElseThrow(() -> new RuntimeException("Loan not found"));
+        loan.returnLoan(amount);
+        return loanRepository.save(loan);
+    }*/
+
+    @PutMapping("/{id}/payback")
+    public Loan paybackLoan(@PathVariable Long id, @RequestParam double amount) {
+        Loan loan = loanRepository.findById(id).orElseThrow(() -> new RuntimeException("Loan not found"));
+        loan.returnLoan(amount);
+        return loanRepository.save(loan);
+    }
+
+    @PutMapping("/{id}/borrow")
     public Loan borrowLoan(@PathVariable Long id, @RequestParam double amount) {
         Loan loan = loanRepository.findById(id).orElseThrow(() -> new RuntimeException("Loan not found"));
         loan.borrowLoan(amount);
         return loanRepository.save(loan);
     }
 
-    @PostMapping("/{id}/payback")
-    public Loan paybackLoan(@PathVariable Long id, @RequestParam double amount) {
-        Loan loan = loanRepository.findById(id).orElseThrow(() -> new RuntimeException("Loan not found"));
-        loan.returnLoan(amount);
-        return loanRepository.save(loan);
-    }
+
 
 }
