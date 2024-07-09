@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffcc00, #ff6699, #66ccff);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#create-loan, #borrow-loan, #check-loan, #payback-loan {
+    border: 2px solid black;
+    width: 400px ;
+    height: 600px ;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+#create-loan {
+    background-color: white;
+    color: black;
+}
+
+#borrow-loan {
+    background-color: white;
+    color: black;
+}
+
+#payback-loan {
+    background-color: white;
+    color: black;
+}
+
+#check-loan {
+    background-color: white;
+    color: black;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan Management</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <div id="create-loan">
+        <h1>Create Loan</h1>
+        <form id="create-loan-form">
+            <label>Loan Amount: $</label><input type="number" placeholder="100" id="loan-amount-create">
+            <br><br>
+            <label>Loan Type:</label>
+            <br><br>
+            <input type="radio" name="loan-type" value="Business"><label> Business</label>
+            <br><br>
+            <input type="radio" name="loan-type" value="Mortgage"><label> Mortgage</label>
+            <br><br>
+            <input type="radio" name="loan-type" value="Personal"><label> Personal</label>
+            <br><br>
+            <input type="radio" name="loan-type" value="School"><label> School</label>
+            <br><br>
+            <label>Loan Term (Months): </label><input type="number" placeholder="10" id="loan-term-create">
+            <br><br>
+            <label>Interest Rate Per Month: %</label><input type="number" placeholder="1" id="loan-rate-create">
+            <br><br>
+            <label>Loans Owned Already: </label><input type="number" placeholder="1" id="loan-curr-amount-create">
+            <br><br>
+            <label>Maximum Loan Amount: $</label><input type="number" placeholder="50000" id="loan-max-amount-create">
+            <br><br>
+            <input type="submit" value="Create Loan">
+            <br><br>
+        </form>
+    </div>
+
+    <div id="borrow-loan">
+        <h1>Borrow Loan</h1>
+        <form id="borrow-loan-form">
+            <label>Loan ID: </label><input type="number" placeholder="1234" id="borrow-loan-id">
+            <br><br>
+            <label>Amount to Borrow: $</label><input type="number" id="borrow-loan-amount" placeholder="100.00">
+            <br><br>
+            <input type="submit" value="Borrow">
+            <div id="borrow-loan-result"></div>
+        </form>
+    </div>
+
+    <div id="payback-loan">
+        <h1>Payback Loan</h1>
+        <form id="payback-loan-form">
+            <label>Loan ID: </label><input type="number" placeholder="1234" id="payback-loan-id">
+            <br><br>
+            <label>Amount to Payback: $</label><input type="number" id="payback-loan-amount" placeholder="100.00">
+            <br><br>
+            <input type="submit" value="Payback">
+            <div id="payback-loan-result"></div>
+        </form>
+    </div>
+
+    <div id="check-loan">
+        <h1>Check Loan</h1>
+        <form id="check-loan-form">
+            <label>User ID: </label><input type="number" id="check-loan-id" placeholder="1234">
+            <br><br>
+            <input type="submit" value="Check Loan">
+            <div id="check-loan-result"></div>
+        </form>
+    </div>
+</body>
+</html>
